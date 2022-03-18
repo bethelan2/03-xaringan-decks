@@ -1,0 +1,107 @@
+---
+title: "02-Circus Show"
+date: 18.03.22
+output:
+ xaringan::moon_reader:
+   yolo: true
+
+---
+
+```{r, echo=FALSE, include=FALSE}
+library(babynames)
+library(tidyverse)
+```
+
+# Introduce Yourself! 
+
+> My name is Bethany and I am an Assistant Psychologist (Research) at BERRI Ltd. I live in Colchester with my Mum and Brother.
+
+---
+
+# Find me at...
+
+All the details... 
+
+---
+class: center, middle
+
+# Slide with centered content in the middle
+
+
+My name is Beth.
+
+--
+ 
+I like sunshine.
+
+--
+
+seeing my friends,
+
+--
+
+and statistics.
+
+---
+
+.pull-left[
+I also like the beach
+![](Beachimage.jfif)
+]
+
+--
+
+.pull-right[
+and I have always wanted to visit a rainforest
+![](Rainforest Image.jfif)
+]
+
+---
+
+Hello Plot 
+
+.pull-left[
+
+```{r practice plot, fig.retina=3, echo=FALSE, include=TRUE}
+library(babynames)
+library(tidyverse)
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>%
+  filter(sex == "F")
+name_plot <- ggplot(tx_names ,
+                    aes(x= year,
+                        y= prop,
+                        group= name,
+                        colour= name)) +
+  geom_line()
+name_plot
+
+                    
+```
+]
+
+.pull-right[
+
+```{r include= TRUE, eval=FALSE}
+
+tx_names <- babynames %>%
+  filter(name == "Dallas" | name == "Austin") %>%
+  filter(sex == "F")
+tx_plot <- ggplot(tx_names ,
+                    aes(x= year,
+                        y= prop,
+                        group= name,
+                        colour= name)) +
+  geom_line()
+tx_plot
+```
+
+]
+
+---
+ 
+# A random slide to try out presenter notes. 
+
+???
+
+_you would say something extra here that you don't have in your slide_
